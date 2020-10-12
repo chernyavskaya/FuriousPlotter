@@ -572,6 +572,7 @@ class FPPlot:
         obj_definition_lines = []
         if self.cfg.OptExist(key+".customize"):
             for line in self.cfg.GetOpt(vstring)(key+".customize"):
+                self.histos['this'] = obj
                 line = self.computeValues(line)
                 if line[:6] != "macro:":
                     line = "this->"+line if line[:4] != "this" else line
